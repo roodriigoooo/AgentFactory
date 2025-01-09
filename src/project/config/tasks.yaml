@@ -1,0 +1,46 @@
+planning_task:
+  description: >
+    Break down this prompt into specific tangible tasks.
+    Example format:
+    tasks:
+      - description: "Market Research Analysis"
+        expected_output: "Comprehensive market research report"
+  expected_output: >
+    A YAML formatted list of tasks with following formatting:
+    tasks:
+      - description: "Market Research Analysis"
+        expected_output: "Comprehensive market research report"
+  agent: task_planner
+
+agent_creation_task:
+  description: >
+    Based on the tasks from the previous step, create a YAML list of unique agents.
+    For each unique expertise area identified in the tasks, create one specialized agent.
+    Example format:
+    agents:
+      - role: "Market Research Expert"
+        goal: "Conduct all market research related tasks"
+        backstory: "Expert with deep experience in market analysis"
+        expertise: ["Market Research", "Consumer Analysis"]
+  expected_output: "A YAML formatted list of unique agents with their roles, goals, and expertise"
+  agent: agent_creator
+  context: [planning_task]
+
+config_writing_task:
+  description: >
+    Based on the previous task planning and agent creation outputs, create a comprehensive config file.
+    Combine both the tasks and agents into a single YAML configuration file.
+    Example format:
+    config:
+      agents:
+        - role: "Agent role"
+          goal: "Agent goal"
+          backstory: "Agent backstory"
+          expertise: ["expertise1", "expertise2"]
+      tasks:
+        - description: "Task description"
+          expected_output: "Expected output"
+          assigned_agent: "Agent role"
+  expected_output: "A YAML configuration file that will be saved as config.yaml"
+  agent: config_writer
+  context: [planning_task, agent_creation_task]
