@@ -31,18 +31,6 @@ class MarketAnalysisFlow:
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.results_dir = os.path.join(self.base_results_dir, self.timestamp)
         os.makedirs(self.results_dir)
-        
-        # Load agent configurations
-        self.agent_config = self._load_agent_config()
-
-    def _load_agent_config(self):
-        config_path = os.path.join("config", "agent_config.yaml")
-        try:
-            with open(config_path, 'r') as f:
-                return yaml.safe_load(f)
-        except Exception as e:
-            logger.warning(f"Failed to load agent config: {str(e)}")
-            return {}
 
     async def run_market_analysis(self):
         try:
@@ -60,16 +48,16 @@ class MarketAnalysisFlow:
             if result_str.endswith("```"):
                 result_str = result_str[:-3]
             
-            # Process and store metrics
+            # Store the raw YAML string as analysis
+            self.state.analysis = result_str
+            
+            # Process metrics
             data = yaml.safe_load(result_str)
-            metrics = {
+            self.state.metrics = {
                 "num_agents": len(data.get("config", {}).get("agents", [])),
                 "num_tasks": len(data.get("config", {}).get("tasks", [])),
                 "timestamp": datetime.now().isoformat()
             }
-            
-            self.state.metrics = metrics
-            self.state.analysis = result_str
             
             logger.info("Market analysis completed successfully")
             return result_str
@@ -85,9 +73,9 @@ class MarketAnalysisFlow:
             with open(analysis_file, 'w') as f:
                 f.write(result)
             
-            # Save state JSON
-            state_file = os.path.join(self.results_dir, "result.json")
-            with open(state_file, 'w') as f:
+            # Save result JSON with raw YAML string
+            result_file = os.path.join(self.results_dir, "result.json")
+            with open(result_file, 'w') as f:
                 json.dump(self.state.to_dict(), f, indent=2)
             
             logger.info(f"Analysis completed and saved to: {self.results_dir}")
