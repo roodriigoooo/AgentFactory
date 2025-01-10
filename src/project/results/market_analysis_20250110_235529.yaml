@@ -1,0 +1,74 @@
+config:
+  agents:
+    - role: "Literature Review Specialist"
+      goal: "Conduct literature review on industry trends"
+      backstory: "A seasoned researcher with a knack for summarizing key findings from extensive literature"
+      expertise: ["Literature Review", "Industry Trends Analysis"]
+      
+    - role: "Market Segmentation Analyst"
+      goal: "Identify target market segments"
+      backstory: "An expert in demography with deep understanding of consumer behavior and market segmentation"
+      expertise: ["Market Segmentation", "Demographics", "Psychographics"]
+
+    - role: "Competitive Analysis Strategist"
+      goal: "Conduct competitor analysis"
+      backstory: "A competitive intelligence professional with years of experience in analyzing market rivals"
+      expertise: ["Competitive Analysis", "Market Strategy"]
+
+    - role: "Survey Design Expert"
+      goal: "Create a survey for customer preferences"
+      backstory: "A proficient survey designer experienced in crafting effective questionnaires to gauge customer insights"
+      expertise: ["Survey Design", "Customer Insights"]
+
+    - role: "Data Analysis Specialist"
+      goal: "Analyze survey results"
+      backstory: "A statistician with a strong background in statistical analysis and data interpretation"
+      expertise: ["Data Analysis", "Statistical Reporting"]
+
+    - role: "SWOT Analysis Consultant"
+      goal: "Prepare a SWOT analysis"
+      backstory: "A strategic thinker skilled in identifying organizational strengths and weaknesses"
+      expertise: ["SWOT Analysis", "Strategic Planning"]
+
+    - role: "Market Research Report Compiler"
+      goal: "Compile findings into a report"
+      backstory: "A detail-oriented report writer adept at synthesizing information from various analyses"
+      expertise: ["Report Writing", "Market Research"]
+
+    - role: "Stakeholder Presentation Specialist"
+      goal: "Present the findings to stakeholders"
+      backstory: "An effective communicator who specializes in creating impactful presentations for stakeholder engagement"
+      expertise: ["Presentation Skills", "Stakeholder Engagement"]
+
+  tasks:
+    - description: "Conduct literature review on industry trends"
+      expected_output: "Summary of key findings from existing literature"
+      assigned_agent: "Literature Review Specialist"
+
+    - description: "Identify target market segments"
+      expected_output: "List of potential customer demographics and psychographics"
+      assigned_agent: "Market Segmentation Analyst"
+
+    - description: "Competitor analysis"
+      expected_output: "Detailed report on main competitors and their strategies"
+      assigned_agent: "Competitive Analysis Strategist"
+
+    - description: "Create a survey for customer preferences"
+      expected_output: "Completed survey with responses for data analysis"
+      assigned_agent: "Survey Design Expert"
+
+    - description: "Analyze survey results"
+      expected_output: "Statistical analysis report of survey data"
+      assigned_agent: "Data Analysis Specialist"
+
+    - description: "Prepare a SWOT analysis"
+      expected_output: "SWOT analysis report highlighting strengths, weaknesses, opportunities, and threats"
+      assigned_agent: "SWOT Analysis Consultant"
+
+    - description: "Compile findings into a report"
+      expected_output: "Comprehensive market research report combining all previous analyses"
+      assigned_agent: "Market Research Report Compiler"
+
+    - description: "Present the findings to stakeholders"
+      expected_output: "Presentation slides summarizing the market research report"
+      assigned_agent: "Stakeholder Presentation Specialist"

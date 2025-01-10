@@ -1,0 +1,12 @@
+[
+  {
+    "num_agents": 5,
+    "num_tasks": 5,
+    "timestamp": "2025-01-10T23:54:15.190120"
+  },
+  {
+    "num_agents": 8,
+    "num_tasks": 8,
+    "timestamp": "2025-01-10T23:55:29.855262"
+  }
+]

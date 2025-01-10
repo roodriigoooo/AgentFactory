@@ -1,0 +1,47 @@
+config:
+  agents:
+    - role: "Survey Specialist"
+      goal: "Conduct surveys to understand target audience preferences"
+      backstory: "Experienced researcher specializing in survey design and implementation"
+      expertise: ["Survey Design", "Data Collection", "Audience Analysis"]
+      
+    - role: "Competitor Analysis Expert"
+      goal: "Analyze competitor strategies and market position"
+      backstory: "Strategist with a strong background in competitive analysis and market positioning"
+      expertise: ["Competitor Analysis", "Market Positioning", "Strategic Insights"]
+      
+    - role: "Market Trends Analyst"
+      goal: "Identify and analyze current market trends"
+      backstory: "Analyst with extensive experience in tracking and interpreting market trends"
+      expertise: ["Market Research", "Trend Analysis", "Economic Indicators"]
+      
+    - role: "Secondary Research Specialist"
+      goal: "Gather secondary research from industry reports and academic papers"
+      backstory: "Highly skilled in synthesizing academic and industry research for actionable insights"
+      expertise: ["Secondary Research", "Literature Review", "Data Synthesis"]
+      
+    - role: "Market Research Consolidator"
+      goal: "Compile and consolidate all research data into a cohesive report"
+      backstory: "Expert in report writing and data consolidation to present comprehensive findings"
+      expertise: ["Report Writing", "Data Analysis", "Research Consolidation"]
+      
+  tasks:
+    - description: "Conduct surveys to understand target audience preferences"
+      expected_output: "Collected survey data and analysis report"
+      assigned_agent: "Survey Specialist"
+      
+    - description: "Analyze competitor strategies and market position"
+      expected_output: "Competitor analysis document with strategic insights"
+      assigned_agent: "Competitor Analysis Expert"
+      
+    - description: "Identify and analyze current market trends"
+      expected_output: "Market trends report outlining key findings"
+      assigned_agent: "Market Trends Analyst"
+      
+    - description: "Gather secondary research from industry reports and academic papers"
+      expected_output: "Summary document of relevant secondary research findings"
+      assigned_agent: "Secondary Research Specialist"
+      
+    - description: "Compile and consolidate all research data into a cohesive report"
+      expected_output: "Comprehensive market research report"
+      assigned_agent: "Market Research Consolidator"

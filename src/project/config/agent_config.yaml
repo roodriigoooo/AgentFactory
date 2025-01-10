@@ -1,0 +1,14 @@
+agent_parameters:
+  market_research:
+    temperature: 0.7
+    max_iterations: 3
+    tools:
+      - web_search
+      - data_analysis
+  
+  stakeholder_analysis:
+    temperature: 0.5
+    max_iterations: 2
+    tools:
+      - document_analysis
+      - communication
